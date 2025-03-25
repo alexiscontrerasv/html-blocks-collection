@@ -1,0 +1,91 @@
+/* Contenedor principal al 100% */
+.custom-age-main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor interior ajustado al 80% */
+.custom-age-dice-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* Estilos de los enlaces (desactivamos estilos por defecto) */
+.custom-age-dice-container a {
+    text-decoration: none;
+}
+
+/* Estilos de los dados */
+.custom-age-dice {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transform: rotate(0deg);
+    animation: custom-age-dice-bounce 2s infinite;
+}
+
+@keyframes custom-age-dice-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.custom-age-dice:hover {
+    animation: custom-age-dice-rotate 0.5s ease-in-out;
+}
+
+@keyframes custom-age-dice-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilo para los textos dentro de los dados */
+.custom-age-dice span:first-child {
+    font-size: 20px;
+    /* Tamaño del número o rango de edad */
+}
+
+.custom-age-dice span:last-child {
+    font-size: 14px;
+    /* Tamaño de "meses" o "años" */
+}
+
+/* Media query para Mobile */
+@media (max-width: 768px) {
+    .custom-age-dice-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .custom-age-dice {
+        width: 80px;
+        height: 80px;
+    }
+}
