@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h3>activo</h3>
+        <div class="contenedor-modal-cards">
+
+            <div onclick="openQuiabo()" class="body-card">
+                <img src="./img/icone-quiabo.webp" alt="">
+                <p>
+                    Extracto de Quiabol
+                </p>
+            </div>
+
+            <div onclick="openAloe()" class="body-card">
+                <img src="./img/icone-aloe-vera.webp" alt="">
+                <p>Aloe Vera</p>
+            </div>
+            <div onclick="openTrigo()" class="body-card">
+                <img src="./img/icone-trigo.webp" alt="">
+                <p>Proteína de Trigo</p>
+            </div>
+            <div onclick="openAcido()" class="body-card">
+                <img src="./img/icone-acido.webp" alt="">
+                <p>Ácido Lático</p>
+            </div>
+            <div onclick="openOleo()" class="body-card">
+                <img src="./img/icone-oleo.webp" alt="">
+                <p>Óleo de Rícino</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal-shodow" id="modalActivos">
+    </div>
+</body>
+
+<script>
+    let infoModal = [
+        { idModal: "quiabo", imgModal: "./img/icone-quiabo.webp", tituloModal: "Extrato de Quiabo", descriptionModal: "Responsable de reponer los nutrientes y vitaminas esenciales para el cabello, como la vitamina A, B, C y E, y minerales esenciales como el calcio, hierro, zinc y magnesio. Además, el extracto de okra tiene una alta concentración de potasio y fibras que enriquecen la realineación capilar, reestructurando las fibras." },
+        { idModal: "aloeVera", imgModal: "./img/icone-aloe-vera.webp", tituloModal: "Aloe Vera", descriptionModal: "Activo sumamente beneficioso para el cuero cabelludo que estimula el crecimiento y la regeneración del cabello a la vez que nutre, hidrata y reduce la caída del cabello en una misma aplicación, optimizando los costes profesionales y aumentando los beneficios." },
+        { idModal: "trigo", imgModal: "./img/icone-trigo.webp", tituloModal: "Proteína de Trigo", descriptionModal: "Agente reparador e hidrorregulador capaz de nutrir y prolongar el efecto liso, además de ayudar a restaurar la flexibilidad natural de los hilos, proporcionando una reconstrucción completa desde la primera aplicación." },
+        { idModal: "acido", imgModal: "./img/icone-acido.webp", tituloModal: "Ácido Lático", descriptionModal: "Un activo inteligente utilizado por los mejores profesionales de la belleza del mundo para reparar la cutícula del cabello. El ácido láctico penetra profundamente en la fibra capilar para reconstruir y aportar más brillo, hidratación y suavidad." },
+        { idModal: "oleo", imgModal: "./img/icone-oleo.webp", tituloModal: "Óleo de Rícino", descriptionModal: "Encargado de aumentar el volumen de los hilos y restaurar las propiedades esenciales de omega 6 y 9, que se pierden de forma natural. Además, estimula el cuero cabelludo y los folículos pilosos para fortalecer el cabello, asegurando la limpieza del cuero cabelludo." },
+    ]
+
+    let modalActivos = document.getElementById('modalActivos')
+
+    for (const cardsInfor of infoModal) {
+        modalActivos.innerHTML += `
+                <div class="body-modal" id="${cardsInfor.idModal}">
+                    <div class="cerrar"><span onclick="closet()">X</span></div>
+        
+                    <div class="info-modal">
+                        <div class="box-img-modal">
+                            <img class="img-modal" src="${cardsInfor.imgModal}" alt="">
+                        </div>
+                        <h5>
+                            ${cardsInfor.tituloModal}
+                        </h5>
+                        <p>
+                            ${cardsInfor.descriptionModal}
+                        </p>
+                    </div>
+        
+                </div>
+            
+    `;
+    }
+
+    function openQuiabo() {
+        document.getElementById("modalActivos").classList.add("active");
+        document.getElementById("quiabo").classList.add("active");
+    }
+    function openAloe() {
+        document.getElementById("modalActivos").classList.add("active");
+        document.getElementById("aloeVera").classList.add("active");
+    }
+    function openTrigo() {
+        document.getElementById("modalActivos").classList.add("active");
+        document.getElementById("trigo").classList.add("active");
+    }
+    function openAcido() {
+        document.getElementById("modalActivos").classList.add("active");
+        document.getElementById("acido").classList.add("active");
+    }
+    function openOleo() {
+        document.getElementById("modalActivos").classList.add("active");
+        document.getElementById("oleo").classList.add("active");
+    }
+
+    function closet() {
+        document.getElementById("modalActivos").classList.remove("active");
+        document.getElementById("quiabo").classList.remove("active");
+        document.getElementById("aloeVera").classList.remove("active");
+        document.getElementById("trigo").classList.remove("active");
+        document.getElementById("acido").classList.remove("active");
+        document.getElementById("oleo").classList.remove("active");
+    }
+
+</script>
+
+
+
+</html>
